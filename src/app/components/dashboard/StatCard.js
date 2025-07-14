@@ -1,27 +1,18 @@
 import React from 'react';
 import { MoreHorizontal } from 'lucide-react';
 
-const StatCard = ({ title, value, color = 'yellow', className = '' }) => {
+// components/dashboard/StatCard.js
+const StatCard = ({ title, value, color, className }) => {
   const colorClasses = {
-    yellow: 'bg-yellow-100 border-yellow-200',
-    blue: 'bg-blue-100 border-blue-200',
-    green: 'bg-green-100 border-green-200',
-    purple: 'bg-purple-100 border-purple-200'
+    yellow: 'bg-yellow-100 text-yellow-800',
+    blue: 'bg-blue-100 text-blue-800',
+    green: 'bg-green-100 text-green-800',
   };
-
   return (
-    <div className={`${colorClasses[color]} p-4 rounded-lg border ${className}`}>
-      <div className="flex items-center justify-between mb-2">
-        <h3 className="text-sm font-medium text-gray-700">{title}</h3>
-        <button className="text-gray-500 hover:text-gray-700">
-          <MoreHorizontal className="w-4 h-4" />
-        </button>
-      </div>
-      <div className="text-2xl font-bold text-gray-800">
-        {value.toLocaleString()}
-      </div>
+    <div className={`rounded-lg shadow-md p-3 ${colorClasses[color]} ${className}`}>
+      <h3 className="text-sm font-medium">{title}</h3>
+      <p className="text-xl font-bold">{value}</p>
     </div>
   );
 };
-
 export default StatCard;

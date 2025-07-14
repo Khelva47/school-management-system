@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 import Head from 'next/head';
 import Sidebar from './components/layout/Sidebar';
@@ -14,7 +15,6 @@ import Messages from './components/dashboard/Messages';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('dashboard');
-
   return (
     <>
       <Head>
@@ -23,24 +23,37 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <div className="flex h-screen bg-gray-100">
+      <div className="flex h-screen bg-gray-50">
         <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
         
         <div className="flex-1 flex flex-col overflow-hidden">
           <Header />
           
-          <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50 p-6">
+          <main className="flex-1 overflow-x-hidden overflow-y-auto p-6">
             {activeTab === 'dashboard' && (
               <div className="space-y-6">
-                <WelcomeSection />
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  <StatCard title="Students" value={5909} color="yellow" />
-                  <StatCard title="Teachers" value={60} color="blue" />
-                  <StatCard title="Employee" value={100} color="green" />
-                  <div className="lg:col-span-1">
-                    <Calendar />
+                {/* Top section with WelcomeSection and stat cards + calendar */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                  {/* Welcome section takes up more space */}
+                  <div className="lg:col-span-6 xl:col-span-7">
+                    <WelcomeSection />
+                  </div>
+                  
+                  {/* Stats cards and calendar on the right */}
+                  <div className="lg:col-span-6 xl:col-span-5">
+                    <div className="flex gap-6">
+                      {/* Stats cards in a single column */}
+                      <div className="flex flex-col gap-4 flex-1">
+                        <StatCard title="Students" value="5,909" color="yellow" />
+                        <StatCard title="Teachers" value="60" color="purple" />
+                        <StatCard title="Employee" value="100" color="yellow" />
+                      </div>
+                      
+                      {/* Calendar positioned at the end */}
+                      <div className="bg-white rounded-lg shadow-sm p-4 flex-1">
+                        <Calendar year={2021} month={8} /> {/* September 2021 (month 8 = September) */}
+                      </div>
+                    </div>
                   </div>
                 </div>
                 
@@ -49,15 +62,15 @@ export default function Home() {
                   <NoticeBoard />
                 </div>
                 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                  <div className="lg:col-span-2">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  <div className="lg:col-span-1">
                     <EarningsChart />
                   </div>
-                  <FinancialOverview />
+                  <FinancialOverview income={2954000} expenses={19291266} />
                 </div>
                 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                  <FeeStatus />
+                  <FeeStatus paid={1335} pending={4366} overdue={208} />
                   <Messages />
                 </div>
               </div>
