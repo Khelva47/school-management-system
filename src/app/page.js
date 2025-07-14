@@ -34,15 +34,21 @@ export default function Home() {
               <div className="space-y-6">
                 {/* Top section with WelcomeSection and stat cards + calendar */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-                  {/* Welcome section takes up more space */}
-                  <div className="lg:col-span-6 xl:col-span-7">
+                  {/* Left side - Welcome section and StudentStats/NoticeBoard */}
+                  <div className="lg:col-span-6 xl:col-span-7 space-y-6">
                     <WelcomeSection />
+                    
+                    {/* StudentStats and NoticeBoard directly under WelcomeSection */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <StudentStats />
+                      <NoticeBoard />
+                    </div>
                   </div>
                   
-                  {/* Stats cards and calendar on the right */}
+                  {/* Right side - Stats cards and calendar */}
                   <div className="lg:col-span-6 xl:col-span-5">
-                    <div className="flex gap-6">
-                      {/* Stats cards in a single column */}
+                    <div className="flex gap-4">
+                      {/* Stats cards in a single column with increased size */}
                       <div className="flex flex-col gap-4 flex-1">
                         <StatCard title="Students" value="5,909" color="yellow" />
                         <StatCard title="Teachers" value="60" color="purple" />
@@ -50,16 +56,11 @@ export default function Home() {
                       </div>
                       
                       {/* Calendar positioned at the end */}
-                      <div className="bg-white rounded-lg shadow-sm p-4 flex-1">
+                      <div className="bg-white rounded-lg shadow-sm p-4 w-64">
                         <Calendar year={2021} month={8} /> {/* September 2021 (month 8 = September) */}
                       </div>
                     </div>
                   </div>
-                </div>
-                
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                  <StudentStats />
-                  <NoticeBoard />
                 </div>
                 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
