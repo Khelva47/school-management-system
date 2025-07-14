@@ -21,7 +21,7 @@ const StatCard = ({ title, value, color }) => {
       {/* 3 dots menu icon */}
       <button className="absolute top-3 right-3 p-1 rounded-full transition-colors">
         <svg 
-          className="w-4 h-4 text-gray-600" 
+          className="w-8 h-8 text-gray-600" 
           fill="currentColor" 
           viewBox="0 0 24 24"
         >
@@ -31,8 +31,8 @@ const StatCard = ({ title, value, color }) => {
       
       {/* Card content */}
       <div className="pr-8">
-        <h3 className="text-sm font-medium text-gray-600 mb-1">{title}</h3>
-        <p className="text-2xl font-bold">{value}</p>
+        <h3 className="text-xl font-medium text-gray-600 mb-1">{title}</h3>
+        <p className="text-4xl font-bold">{value}</p>
       </div>
     </div>
   );

@@ -56,7 +56,7 @@ export default function Home() {
                       </div>
                       
                       {/* Calendar positioned at the end */}
-                      <div className="bg-white rounded-lg shadow-sm p-4 w-64">
+                      <div className="bg-white rounded-lg shadow-sm p-4 w-100">
                         <Calendar year={2021} month={8} /> {/* September 2021 (month 8 = September) */}
                       </div>
                     </div>
