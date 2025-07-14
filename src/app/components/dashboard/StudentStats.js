@@ -17,8 +17,8 @@ const StudentStats = () => {
       <div className="flex justify-center space-x-8 mb-6">
         {/* Boys Chart */}
         <div className="flex flex-col items-center">
-          <div className="relative w-24 h-24 mb-3">
-            <svg className="w-24 h-24 transform -rotate-90" viewBox="0 0 100 100">
+          <div className="relative w-28 h-28 mb-3">
+            <svg className="w-28 h-28 transform -rotate-90" viewBox="0 0 100 100">
               {/* Background circle */}
               <circle
                 cx="50"
@@ -53,8 +53,8 @@ const StudentStats = () => {
 
         {/* Girls Chart */}
         <div className="flex flex-col items-center">
-          <div className="relative w-24 h-24 mb-3">
-            <svg className="w-24 h-24 transform -rotate-90" viewBox="0 0 100 100">
+          <div className="relative w-28 h-28 mb-3">
+            <svg className="w-28 h-28 transform -rotate-90" viewBox="0 0 100 100">
               {/* Background circle */}
               <circle
                 cx="50"

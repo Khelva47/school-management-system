@@ -46,7 +46,7 @@ export default function Home() {
                   </div>
                   
                   {/* Right side - Stats cards and calendar */}
-                  <div className="lg:col-span-6 xl:col-span-5">
+                  <div className="lg:col-span-6 xl:col-span-5 space-y-6">
                     <div className="flex gap-4">
                       {/* Stats cards in a single column with increased size */}
                       <div className="flex flex-col gap-4 flex-1">
@@ -60,6 +60,9 @@ export default function Home() {
                         <Calendar year={2021} month={8} /> {/* September 2021 (month 8 = September) */}
                       </div>
                     </div>
+                    <div className="grid grid-cols-1 md:grid-cols-1 gap-6 ">
+                      <FinancialOverview income={2954000} expenses={19291266} className="h-32 p-2 bg-white rounded-lg shadow-md" />
+                    </div>
                   </div>
                 </div>
                 
@@ -67,7 +70,6 @@ export default function Home() {
                   <div className="lg:col-span-1">
                     <EarningsChart />
                   </div>
-                  <FinancialOverview income={2954000} expenses={19291266} />
                 </div>
                 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
