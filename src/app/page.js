@@ -15,6 +15,7 @@ import Messages from './components/dashboard/Messages';
 import TeachersPage from './pages/TeachersPage';
 import StudentsPage from './pages/StudentsPage';
 import CreateStudentPage from './pages/CreateStudentPage';
+import CreateTeacherPage from './pages/CreateTeacherPage';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -59,13 +60,16 @@ export default function Home() {
         );
       
       case 'teachers':
-        return <TeachersPage />;
+        return <TeachersPage setActiveTab={setActiveTab} />;
       
       case 'students':
         return <StudentsPage setActiveTab={setActiveTab} />;
       
       case 'create-student':
-        return <CreateStudentPage setActiveTab={setActiveTab} />;
+        return <CreateStudentPage onBack={() => setActiveTab('students')} />;
+      
+      case 'create-teacher':
+        return <CreateTeacherPage onBack={() => setActiveTab('teachers')} />;
       
       default:
         return (

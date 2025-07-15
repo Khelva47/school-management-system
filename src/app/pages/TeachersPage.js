@@ -16,7 +16,7 @@ import {
   BookOpen
 } from 'lucide-react';
 
-const TeachersPage = () => {
+const TeachersPage = ({ setActiveTab }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedClass, setSelectedClass] = useState('All Classes');
   const [selectedSubject, setSelectedSubject] = useState('All Subjects');
@@ -158,6 +158,14 @@ const TeachersPage = () => {
     );
   };
 
+  const handleAddNew = () => {
+    if (typeof setActiveTab === 'function') {
+      setActiveTab('create-teacher');
+    } else {
+      console.error('setActiveTab is not a function:', setActiveTab);
+    }
+  };
+
   return (
     <div className="p-6 bg-gray-50 min-h-screen">
       <div className="bg-white rounded-lg shadow-sm">
@@ -170,7 +178,7 @@ const TeachersPage = () => {
                 Home → All Teachers List
               </p>
             </div>
-            <button className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-blue-700 transition-colors">
+            <button onClick={handleAddNew} className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-blue-700 transition-colors">
               <Plus size={16} />
               Add New
             </button>

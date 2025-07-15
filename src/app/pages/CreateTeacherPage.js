@@ -64,7 +64,7 @@ const CreateTeacherPage = ({ onBack }) => {
     console.log('Teacher form submitted:', formData);
     // Handle teacher creation logic here
     alert('Teacher added successfully!');
-    // You can call onBack() here to return to the teachers list
+    onBack();
   };
 
   return (
@@ -121,14 +121,7 @@ const CreateTeacherPage = ({ onBack }) => {
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Last Name
                 </label>
-                <input
-                  type="text"
-                  value={formData.lastName}
-                  onChange={(e) => handleInputChange('lastName', e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Enter last name"
-                />
-              </div>
+                </div>
 
               {/* Class */}
               <div>
