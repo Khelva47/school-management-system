@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, Bell, User } from 'lucide-react';
+import { Search, Bell, User, MessageSquare, Settings } from 'lucide-react';
 
 const Header = () => {
   return (
@@ -11,7 +11,7 @@ const Header = () => {
             <input
               type="text"
               placeholder="Search"
-              className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="pl-10 pr-4 py-2 border border-gray-300 rounded-full bg-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
           </div>
         </div>
@@ -19,6 +19,12 @@ const Header = () => {
         <div className="flex items-center space-x-4">
           <button className="p-2 text-gray-600 hover:text-gray-800">
             <Bell className="w-5 h-5" />
+          </button>
+          <button className="p-2 text-gray-600 hover:text-gray-800">
+            <MessageSquare className="w-5 h-5" />
+          </button>
+          <button className="p-2 text-gray-600 hover:text-gray-800">
+            <Settings className="w-5 h-5" />
           </button>
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
