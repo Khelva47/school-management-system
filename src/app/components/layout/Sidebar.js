@@ -27,9 +27,9 @@ const Sidebar = ({ activeTab, setActiveTab }) => {
       <div className="p-4">
         <div className="flex items-center mb-8">
           <div className="w-8 h-8 bg-white rounded-lg mr-3 flex items-center justify-center">
-            <span className="text-gray-900 font-bold">S</span>
+            <span className="text-gray-900 font-bold">A</span>
           </div>
-          <span className="text-xl font-semibold">Smansys</span>
+          <span className="text-xl font-semibold">Alikonko</span>
         </div>
         
         <nav>
