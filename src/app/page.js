@@ -43,6 +43,10 @@ export default function Home() {
                       <StudentStats />
                       <NoticeBoard />
                     </div>
+
+                    <div className="lg:col-span-1">
+                    <EarningsChart />
+                  </div>
                   </div>
                   
                   {/* Right side - Stats cards and calendar */}
@@ -63,19 +67,14 @@ export default function Home() {
                     <div className="grid grid-cols-1 md:grid-cols-1 gap-6 ">
                       <FinancialOverview income={2954000} expenses={19291266} className="h-32 p-2 bg-white rounded-lg shadow-md" />
                     </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                      <FeeStatus paid={1335} pending={4366} overdue={208} />
+                      <Messages />
+                    </div>
                   </div>
-                </div>
+                </div>                
                 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                  <div className="lg:col-span-1">
-                    <EarningsChart />
-                  </div>
-                </div>
-                
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                  <FeeStatus paid={1335} pending={4366} overdue={208} />
-                  <Messages />
-                </div>
               </div>
             )}
             
