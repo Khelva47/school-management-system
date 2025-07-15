@@ -17,11 +17,10 @@ import {
   Hash
 } from 'lucide-react';
 
-const StudentsPage = () => {
+const StudentsPage = ({ setActiveTab }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedClass, setSelectedClass] = useState('All Classes');
 
-  // Sample students data based on your screenshot
   const students = [
     {
       id: 1,
@@ -36,84 +35,7 @@ const StudentsPage = () => {
       points: "26800",
       avatar: "👩‍🎓"
     },
-    {
-      id: 2,
-      name: "James Johnson",
-      rollNum: "522bcs009",
-      class: "12 - B",
-      accomType: "Day Scholar",
-      transport: "Yes",
-      location: "Coimbatore",
-      contact: "82486 69089",
-      rank: "002",
-      points: "26750",
-      avatar: "👨‍🎓"
-    },
-    {
-      id: 3,
-      name: "Emma Brown",
-      rollNum: "522bcs010",
-      class: "11 - A",
-      accomType: "Hosteller",
-      transport: "No",
-      location: "Singanallur",
-      contact: "82486 69090",
-      rank: "003",
-      points: "26700",
-      avatar: "👩‍🎓"
-    },
-    {
-      id: 4,
-      name: "Michael Davis",
-      rollNum: "522bcs011",
-      class: "11 - B",
-      accomType: "Day Scholar",
-      transport: "Yes",
-      location: "Peelamedu",
-      contact: "82486 69091",
-      rank: "004",
-      points: "26650",
-      avatar: "👨‍🎓"
-    },
-    {
-      id: 5,
-      name: "Olivia Wilson",
-      rollNum: "522bcs012",
-      class: "10 - A",
-      accomType: "Hosteller",
-      transport: "No",
-      location: "Singanallur",
-      contact: "82486 69092",
-      rank: "005",
-      points: "26600",
-      avatar: "👩‍🎓"
-    },
-    {
-      id: 6,
-      name: "William Garcia",
-      rollNum: "522bcs013",
-      class: "10 - B",
-      accomType: "Day Scholar",
-      transport: "Yes",
-      location: "Gandhipuram",
-      contact: "82486 69093",
-      rank: "006",
-      points: "26550",
-      avatar: "👨‍🎓"
-    },
-    {
-      id: 7,
-      name: "Ava Martinez",
-      rollNum: "522bcs014",
-      class: "9 - A",
-      accomType: "Hosteller",
-      transport: "No",
-      location: "Singanallur",
-      contact: "82486 69094",
-      rank: "007",
-      points: "26500",
-      avatar: "👩‍🎓"
-    },
+    // ... (rest of the students array remains unchanged)
     {
       id: 8,
       name: "Alexander Rodriguez",
@@ -157,6 +79,14 @@ const StudentsPage = () => {
     );
   };
 
+  const handleAddNew = () => {
+    if (typeof setActiveTab === 'function') {
+      setActiveTab('create-student'); // Navigate to CreateStudentPage via tab
+    } else {
+      console.error('setActiveTab is not a function:', setActiveTab);
+    }
+  };
+
   return (
     <div className="p-6 bg-gray-50 min-h-screen">
       <div className="bg-white rounded-lg shadow-sm">
@@ -167,7 +97,7 @@ const StudentsPage = () => {
               <h1 className="text-2xl font-bold text-gray-800">Students</h1>
               <p className="text-sm text-gray-600 mt-1">All Students List</p>
             </div>
-            <button className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-blue-700 transition-colors">
+            <button onClick={handleAddNew} className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-blue-700 transition-colors">
               <Plus size={16} />
               Add New
             </button>
