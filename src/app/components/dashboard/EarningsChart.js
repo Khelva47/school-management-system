@@ -18,22 +18,22 @@ const EarningsChart = () => {
   ];
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-sm">
-      <div className="flex items-center justify-between mb-6">
-        <h3 className="text-lg font-semibold text-gray-800">Earnings</h3>
-        <div className="flex items-center space-x-4">
-          <div className="flex items-center space-x-2">
-            <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-            <span className="text-sm text-gray-600">Income</span>
+    <div className="bg-white p-2 sm:p-4 rounded-lg shadow-sm">
+      <div className="flex items-center justify-between mb-2 sm:mb-4">
+        <h3 className="text-lg sm:text-xl font-semibold text-gray-800">Earnings</h3>
+        <div className="flex items-center space-x-2 sm:space-x-4">
+          <div className="flex items-center space-x-1 sm:space-x-2">
+            <div className="w-2 h-2 sm:w-3 sm:h-3 bg-blue-500 rounded-full"></div>
+            <span className="text-sm sm:text-base text-gray-600">Income</span>
           </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
-            <span className="text-sm text-gray-600">Expense</span>
+          <div className="flex items-center space-x-1 sm:space-x-2">
+            <div className="w-2 h-2 sm:w-3 sm:h-3 bg-purple-500 rounded-full"></div>
+            <span className="text-sm sm:text-base text-gray-600">Expense</span>
           </div>
         </div>
       </div>
       
-      <div className="h-64">
+      <div className="h-40 sm:h-64">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data}>
             <CartesianGrid strokeDasharray="3 3" />
@@ -60,4 +60,4 @@ const EarningsChart = () => {
   );
 };
 
-export default EarningsChart
+export default EarningsChart;
