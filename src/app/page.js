@@ -24,11 +24,11 @@ export default function Home() {
     switch (activeTab) {
       case 'dashboard':
         return (
-          <div className="space-y-6">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-              <div className="lg:col-span-6 xl:col-span-7 space-y-6">
+          <div className="space-y-4 sm:space-y-6">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6">
+              <div className="lg:col-span-6 xl:col-span-7 space-y-4 sm:space-y-6">
                 <WelcomeSection />
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <StudentStats />
                   <NoticeBoard />
                 </div>
@@ -36,21 +36,21 @@ export default function Home() {
                   <EarningsChart />
                 </div>
               </div>
-              <div className="lg:col-span-6 xl:col-span-5 space-y-6">
-                <div className="flex gap-4">
+              <div className="lg:col-span-6 xl:col-span-5 space-y-4 sm:space-y-6">
+                <div className="flex flex-col sm:flex-row gap-4">
                   <div className="flex flex-col gap-4 flex-1">
                     <StatCard title="Students" value="5,909" color="yellow" />
                     <StatCard title="Teachers" value="60" color="purple" />
                     <StatCard title="Employee" value="100" color="yellow" />
                   </div>
-                  <div className="bg-white rounded-lg shadow-sm p-4 w-100">
+                  <div className="bg-white rounded-lg shadow-sm p-2 sm:p-4 w-full sm:w-auto">
                     <Calendar year={2021} month={8} />
                   </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
+                <div className="grid grid-cols-1 gap-4 sm:gap-6">
                   <FinancialOverview income={2954000} expenses={19291266} className="h-32 p-2 bg-white rounded-lg shadow-md" />
                 </div>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <FeeStatus paid={1335} pending={4366} overdue={208} />
                   <Messages />
                 </div>
@@ -95,13 +95,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex h-screen bg-gray-50">
+      <div className="flex flex-col h-screen bg-gray-50 md:flex-row">
         <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
         
-        <div className="flex-1 flex flex-col overflow-hidden">
+        <div className="flex-1 flex flex-col overflow-hidden w-full">
           <Header />
           
-          <main className="flex-1 overflow-x-hidden overflow-y-auto p-6">
+          <main className="flex-1 overflow-x-hidden overflow-y-auto p-2 sm:p-4">
             {renderContent()}
           </main>
         </div>
