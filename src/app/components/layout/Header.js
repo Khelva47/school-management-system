@@ -1,17 +1,31 @@
+"use client";
 import React from 'react';
-import { Search, Bell, User, MessageSquare, Settings } from 'lucide-react';
+import { Search, Bell, User, MessageSquare, Settings, ArrowLeft } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 const Header = () => {
+  const router = useRouter();
+
+  const handleBack = () => {
+    router.back();
+  };
+
   return (
     <header className="bg-white shadow-sm border-b px-6 py-4">
       <div className="flex items-center justify-between">
-        <div className="flex items-center flex-1">
-          <div className="relative max-w-md">
+        <div className="flex items-center space-x-4 flex-1">
+          <button
+            onClick={handleBack}
+            className="p-2 text-gray-600 hover:text-gray-800 rounded-full hover:bg-gray-100 transition-colors"
+          >
+            <ArrowLeft className="w-5 h-5" />
+          </button>
+          <div className="relative flex-1 max-w-md">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
             <input
               type="text"
               placeholder="Search"
-              className="pl-10 pr-4 py-2 border border-gray-300 rounded-full bg-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-full bg-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
           </div>
         </div>
